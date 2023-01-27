@@ -12,3 +12,5 @@ router.get('/homepage', auth, async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 })
+
+module.exports = router;
