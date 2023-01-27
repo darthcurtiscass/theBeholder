@@ -11,10 +11,11 @@ Post.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-
+            autoIncrement: true,
         },
         date: {
-
+            type: DataTypes.DATE,
+            allowNull: false,
         },
         content: {
             type: DataTypes.TEXT,
@@ -29,7 +30,9 @@ Post.init(
     },
     {
         sequelize,
+        modelName: 'post',
         timestamps: false,
+        freezeTableName: true,
     }
 )
 
