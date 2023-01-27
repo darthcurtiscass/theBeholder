@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection.js')
+const sequelize = require('../config/connection');
 
 class Character extends Model {
 
@@ -114,5 +114,12 @@ Character.init (
             type: DataTypes.STRING,
             allowNull: true,
         },
+    },
+    {
+        sequelize,
+        modelName: 'character',
+        timestamps: false,
+        freezeTableName: true,
     }
+
 )

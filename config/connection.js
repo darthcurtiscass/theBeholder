@@ -1,5 +1,5 @@
 const Sequelsize = require('sequelize');
-const { defaultValueSchemable } = require('sequelize/types/utils');
+// const { defaultValueSchemable } = require('sequelize/types/utils');
 require('dotenv').config();
 
 let sequelize;

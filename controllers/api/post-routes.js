@@ -10,8 +10,6 @@ router.get('/', auth, async (req, res) => {
     } catch (err) {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
-}
-
-)
+})
 
 module.exports = router;
