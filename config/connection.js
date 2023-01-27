@@ -1,4 +1,5 @@
 const Sequelsize = require('sequelize');
+const { defaultValueSchemable } = require('sequelize/types/utils');
 require('dotenv').config();
 
 let sequelize;
@@ -18,3 +19,4 @@ sequelize = new Sequelsize(process.env.JAWSDB_URL);
 }
 
 module.exports = sequelize;
+
