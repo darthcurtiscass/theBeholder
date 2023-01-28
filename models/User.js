@@ -2,9 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection.js')
 
-class User extends Model {
-
-}
+class User extends Model {}
 
 User.init (
     {
@@ -14,7 +12,6 @@ User.init (
             primaryKey: true,
             autoIncrement: true,
         },
-        
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -34,7 +31,6 @@ User.init (
                 len: [8],
             }
         },
-        
     },
     {
         hooks: {
@@ -49,6 +45,7 @@ User.init (
         },
         sequelize,
         timestamps: false,
+        underscored: true,
         modelName: 'user',
         freezeTableName: true, //wont add an s at the end of the table name, so it is going to be user.
     }
