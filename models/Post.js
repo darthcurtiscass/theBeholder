@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection')
-
+const sequelize = require('../config/connection');
 class Post extends Model {
 
 }
@@ -14,8 +13,8 @@ Post.init(
             autoIncrement: true,
         },
         date: {
-            type: DataTypes.DATE,
-            allowNull: false,
+            type: DataTypes.STRING,
+            defaultValue: new Date().getMonth() + 1 + "/" + new Date().getDate() + "/" + new Date().getFullYear()
         },
         content: {
             type: DataTypes.TEXT,

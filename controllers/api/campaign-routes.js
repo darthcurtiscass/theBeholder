@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Campaign = require('../../models/Campaign');
 const auth = require('../../utils/auth')
 
-    router.get('/', auth, async (req, res) => {
+    router.get('/', async (req, res) => {
         try {
             const campaignData = await Campaign.findAll()
             const campaigns = campaignData.map((campaign) => campaign.get({ plain : true}))
@@ -46,13 +46,14 @@ const auth = require('../../utils/auth')
 
         router.put('/:id', async (req, res) => {
             try {
-                const updateCampaign = await User.update(req.body, {
+                const updateCampaign = await Campaign.update(req.body, {
                     where: {
-                        id: req.params.id
+                        id: req.params.id,
                     }
                 })
                 res.json(updateCampaign)
             } catch (err) {
+                res.json(err)
                 res.status(500).json({message:'an error occurred, please try again.'})
             }
         })
