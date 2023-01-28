@@ -5,7 +5,7 @@ class Campaign extends Model {
 
 }
     
-User.init (
+Campaign.init (
     {
         id: {
             type: DataTypes.INTEGER,
