@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
         }
       });
 
-router.put('/:id', auth, async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const updateUser = await User.update(req.body, {
             where: {
