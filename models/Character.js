@@ -14,6 +14,14 @@ Character.init (
             primaryKey: true,
             autoIncrement: true,
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            refernces: {
+                model: 'user',
+                key: 'id'
+            }
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -123,3 +131,5 @@ Character.init (
     }
 
 )
+
+module.exports = Character;
