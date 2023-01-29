@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connection.js');
 
 class Character extends Model {
 
@@ -13,14 +13,6 @@ Character.init (
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            refernces: {
-                model: 'user',
-                key: 'id'
-            }
         },
         name: {
             type: DataTypes.STRING,
@@ -121,6 +113,13 @@ Character.init (
         traits: {
             type: DataTypes.STRING,
             allowNull: true,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            refernces: {
+                model: 'user',
+                key: 'id'
+            }
         },
     },
     {
