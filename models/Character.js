@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection.js')
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection.js');
 
 class Character extends Model {
 
@@ -112,6 +113,13 @@ Character.init (
         traits: {
             type: DataTypes.STRING,
             allowNull: true,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            refernces: {
+                model: 'user',
+                key: 'id'
+            }
         },
     },
     {
