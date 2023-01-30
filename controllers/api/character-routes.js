@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 //Retrieve all characters for a single user
-router.get('/user/:user_id', async (req, res) => {
+router.get('/user/:user_id', auth, async (req, res) => {
     try {
         const userCharacters = await Character.findAll({
             where: {
@@ -46,6 +46,15 @@ router.post('/', auth, async (req, res) => {
         res.status(200).json(newCharacter);
     } catch (err) {
         console.log(err);
+        res.status(500).json({message:err});
+    }
+});
+//delete a character by their id
+router.delete('/:id', auth, async (req, res) => {
+    try {
+        const deletedCharacter = await Character.destroy({ where: {id: req.params.id}})
+        return res.json(deletedCharacter)
+    } catch(err) {
         res.status(500).json({message:err});
     }
 });
