@@ -3,9 +3,7 @@ const router = require('express').Router();
 const {User} = require('../../models');
 const auth = require('../../utils/auth');
 const sequelize = require('sequelize');
-
-
-
+//find all users
 router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll()
@@ -15,7 +13,7 @@ router.get('/', async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 })
-
+//find a specific user by their id
 router.get('/:id', async (req, res) => {
     try {
         const oneUser = await User.findOne({
@@ -51,7 +49,7 @@ router.post('/', async (req, res) => {
             res.status(500).json({message:'an error occurred, please try again.', err})
         }
       });
-
+//update a user based on their id
 router.put('/:id', auth, async (req, res) => {
     try {
         const updateUser = await User.update(req.body, {
@@ -64,7 +62,7 @@ router.put('/:id', auth, async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 });
-
+//user login route to establish a loggedIn session and save their user_id, user_name, and user_email.
 router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({
@@ -104,7 +102,7 @@ router.post('/login', async (req, res) => {
       res.status(500).json(err);
     }
   });
-
+//route to delete a user based on their id.
 router.delete('/:id', async (req, res) => {
     const deleteUser = await User.destroy({ where: {id: req.params.id}})
       return res.json(deleteUser)
