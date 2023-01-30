@@ -11,6 +11,10 @@ router.get('/homepage', auth, async (req, res) => {
     } catch (err) {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
+});
+
+router.get('/login', (req, res)=> {
+    res.send("You aren't logged in")
 })
 
 
