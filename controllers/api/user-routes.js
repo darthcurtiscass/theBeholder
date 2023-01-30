@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
-})
+});
 //find a specific user by their id
 router.get('/:id', async (req, res) => {
     try {
