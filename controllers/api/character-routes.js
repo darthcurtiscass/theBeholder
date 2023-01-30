@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 });
-//Retrieve all characters for a single user
+//retrieve all characters belonging to a single user
 router.get('/user/:user_id', auth, async (req, res) => {
     try {
         const userCharacters = await Character.findAll({
