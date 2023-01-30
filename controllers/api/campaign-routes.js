@@ -11,6 +11,7 @@ const auth = require('../../utils/auth')
             res.status(500).json({message:'an error occurred, please try again.'})
         }
     }
+});
 
     )
 
@@ -62,5 +63,4 @@ const auth = require('../../utils/auth')
             const deleteCampaign = await Campaign.destroy({ where: {id: req.params.id}})
               return res.json(deleteCampaign)
           });   
-
 module.exports = router;

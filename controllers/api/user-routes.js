@@ -39,9 +39,12 @@ router.post('/', async (req, res) => {
           });
           req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.user_id = newUser.id;
+            req.session.user_name = newUser.name;
+            req.session.user_email = newUser.email;
          
           res.status(200).json(newUser);
-            });
+            }); 
         } catch (err) {
             console.log(err);
             console.log(newUserData);
@@ -61,6 +64,46 @@ router.put('/:id', async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 })
+
+router.post('/login', async (req, res) => {
+    try {
+      const dbUserData = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      });
+  
+      if (!dbUserData) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      const validPassword = await dbUserData.checkPassword(req.body.password);
+  
+      if (!validPassword) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      req.session.save(() => {
+        req.session.loggedIn = true;
+        req.session.user_id = dbUserData.id;
+        req.session.user_name = dbUserData.name;
+        req.session.user_email = dbUserData.email;
+
+        res
+          .status(200)
+          .json({ user: dbUserData, message: 'You are now logged in!' });
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
 router.delete('/:id', async (req, res) => {
     const deleteUser = await User.destroy({ where: {id: req.params.id}})

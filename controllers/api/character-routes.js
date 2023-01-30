@@ -11,8 +11,8 @@ router.get('/', async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 });
-
-router.get('/:id', async (req, res) => {
+//Retrieve all characters for a single user
+router.get('/user/:user_id', async (req, res) => {
     try {
         const userCharacters = await Character.findAll({
             where: {
@@ -23,21 +23,25 @@ router.get('/:id', async (req, res) => {
     } catch(err) {
 
     }
-})
-
+});
+//retrieve a single character by their id.
 router.get('/:id', async (req, res) => {
     try {
         const character = await Character.findByPk(req.params.id)
         
+        console.log(character)
         res.status(200).json(character)
     } catch (err) {
         res.status(500).json({message:err})
     }
 });
-
-router.post('/', async (req, res) => {
+//create a new character
+router.post('/', auth, async (req, res) => {
     try {
-        const newCharacter = await Character.create(req.body)
+        const newCharacter = await Character.create({
+            ...req.body,
+            user_id: req.session.user_id,
+        })
         console.log(newCharacter);
         res.status(200).json(newCharacter);
     } catch (err) {
