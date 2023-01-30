@@ -128,7 +128,6 @@ Character.init (
         timestamps: false,
         freezeTableName: true,
     }
-
 )
 
 module.exports = Character;
