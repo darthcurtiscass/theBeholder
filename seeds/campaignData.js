@@ -18,6 +18,6 @@ const campaigndata = [
   },
 ];
 
-const seedCampaign = () => Gallery.bulkCreate(campaigndata);
+const seedCampaign = () => Campaign.bulkCreate(campaigndata);
 
 module.exports = seedCampaign;
