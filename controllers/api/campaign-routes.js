@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Campaign = require('../../models/Campaign');
-const auth = require('../../utils/auth')
 
     router.get('/', async (req, res) => {
         try {
@@ -28,14 +27,11 @@ const auth = require('../../utils/auth')
     router.post('/', async (req, res) => {
         try {
             const newCampaign = await Campaign.create({
-                name: req.body.name,
-                quest: req.body.quest,
+                ...req.body, 
+                user_id: req.session.user_id
             });
-            req.session.save(() => {
-                req.session.loggedIn = true;
-            
             res.status(200).json(newCampaign);
-                });
+
             } catch (err) {
                 console.log(err);
                 res.status(500).json({message:'an error occurred, please try again.', err})
@@ -60,4 +56,5 @@ const auth = require('../../utils/auth')
             const deleteCampaign = await Campaign.destroy({ where: {id: req.params.id}})
               return res.json(deleteCampaign)
           });   
+
 module.exports = router;

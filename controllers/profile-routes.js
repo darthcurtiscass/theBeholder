@@ -3,7 +3,7 @@ const router = require('express').Router();
 const auth = require('../utils/auth');
 const { Character, Campaign, User } = require('../models');
 //get all characters belonging to a specific user
-router.get('/:user_id', auth, async (req, res) => {
+router.get('/:user_id', async (req, res) => {
     try {
         const userCharacters = await Character.findAll({
             where: {
@@ -42,18 +42,12 @@ router.get('/user/:user_id', auth, async (req, res) => {
     }
 });
 
+router.get('/login', (req, res) => {
+    if(req.session.loggedIn){
+        res.redirect('/');
+        return 
+    }
+    res.render('/login');
+})
+
 module.exports = router;
-
-   // axios.get('/api/campaigns').then(campaigns => {
-        //     axios.get('/api/characters').then(characters => {
-
-        //         res.render('profile', { 
-        //             characters, 
-        //             campaigns,
-        //             user: {
-        //                 name: req.session.user_name,
-        //                 email: req.session.user_email,
-        //             }
-        //         })
-        //     })
-        // })
