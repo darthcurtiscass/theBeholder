@@ -2,17 +2,37 @@
 <html lang="eng">
     <head>
         <meta charset="UTF-8">
-        <title> My App</title>
+        <title> The Beholder</title>
         <link rel="stylesheet" href="../../public/css/style.css">
+
     </head>
     <body>
-        <nav></nav>
-        <header>Dungeons & Dragons Player Utility</header>
+        <header>
+            Dungeons & Dragons Player Utility
+        </header>
+        <nav>
+            <a href="../homepage.handlebars">Home</a>
+            {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">logout</button>
+            {{else}}
+            <a href="../../public/js/login.js">Signup</a>
+            {{/if}}
+            <a href="../profile.handlebars">Profile</a>
+        </nav>
+        
         <main>
+            <aside>
+                <h2>The Beholder Blog</h2>
+            </aside>
             {{{ body }}}
         </main>
         <footer>
             Created by Max, Teamir, Owen, and Dylan
         </footer>
+        {{#if loggedIn}}
+        <script src="../../public/js/logout.js"></script>
+        {{/if}}
     </body>
+
+
 </html>
