@@ -21,6 +21,10 @@ Campaign.init (
             type: DataTypes.STRING,
             allowNull: false,
         },
+        party_size: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

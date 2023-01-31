@@ -1,12 +1,16 @@
 const router = require('express').Router();
 const auth = require('../utils/auth');
-const axios = require('axios')
+const axios = require('axios');
+const {Post} = require('../models/Post');
 
-router.get('/homepage', auth, async (req, res) => {
+router.get('/homepage', async (req, res) => {
     try {
-        axios.get('/api/posts').then(posts => {
-            res.render('homepage', { posts })
-        })
+        const postData = await Post.findAll()
+        res.status(200).json(postData) 
+
+        // axios.get('/api/posts').then(posts => {
+        //     res.render('homepage', { posts })
+        // })
         
     } catch (err) {
         res.status(500).json({message:'an error occurred, please try again.'})
