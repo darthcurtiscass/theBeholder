@@ -2,14 +2,10 @@
 const router = require('express').Router();
 const auth = require('../utils/auth');
 const { Character, Campaign, User } = require('../models');
-//get all characters belonging to a specific user
 
-router.get('/:user_id', async (req, res) => {
+router.get('/user/:id', async (req, res) => {
     try {
-        const profileData = await User.findOne({
-            where: {
-                user_id: req.params.user_id
-            },
+        const profileData = await User.findByPk(req.params.id, {
             include: [
                 {
                     model: Campaign,
@@ -17,7 +13,7 @@ router.get('/:user_id', async (req, res) => {
                         'name',
                         'quest',
                         'party_size',
-                    ]
+                    ],
                 },
                 {
                     model: Character,
@@ -25,11 +21,11 @@ router.get('/:user_id', async (req, res) => {
                         'name',
                         'race',
                         'class',
-                    ]
-                }
-            ]
-        })
-        const myProfile = profileData.map((viewProfile) => viewProfile.get({ plain: true }))
+                    ],
+                },
+            ],
+        });
+        const myProfile = profileData.get({ plain: true });
         res.status(200).json(myProfile)
         res.render('profile', { myProfile });
 
@@ -38,7 +34,7 @@ router.get('/:user_id', async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 });
-
+//get all characters belonging to a specific user
 router.get('characters/:user_id', async (req, res) => {
     try {
         const userCharacters = await Character.findAll({

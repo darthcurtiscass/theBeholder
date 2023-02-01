@@ -13,7 +13,7 @@ router.get('/homepage', async (req, res) => {
                 }
             ]
         })
-        const post = postData.map((newPosts) => newPosts.get({ plain: true }))
+        const post = postData.get({ plain: true })
         res.status(200).json(post)
         res.render('homepage', { post });
 
