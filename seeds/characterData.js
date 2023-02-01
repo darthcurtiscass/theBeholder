@@ -24,8 +24,6 @@ const characterData = [
         ideals: 'Not repeatable',
         bonds: 'None at all',
         flaws: 'Ugly',
-        features: 'Warts',
-        traits: null,
     },
     {
         name: 'jackson "harpoon" McSlap',
@@ -50,8 +48,6 @@ const characterData = [
         ideals: 'Everyone should live on boats',
         bonds: 'Sea',
         flaws: 'Gives bad advice',
-        features: 'Big bushy beard',
-        traits: null,
     },
     {
         name: 'Carl',
@@ -76,8 +72,6 @@ const characterData = [
         ideals: 'The earth is flat',
         bonds: 'Lost them due to theft',
         flaws: 'Tells inappropriate jokes at inappropriate times',
-        features: null,
-        traits: null,
     },
 ];
 
