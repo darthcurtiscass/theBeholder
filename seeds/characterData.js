@@ -4,7 +4,8 @@ const characterData = [
     {
         name: 'James Finger',
         race: 'Goblin',
-        class: 'Mage',
+        class: 'Wizard',
+        subclass: 'School of Evocation',
         level: 2,
         alignment: 'Giant Faction',
         hitpoints: 4,
@@ -31,7 +32,8 @@ const characterData = [
     {
         name: 'jackson "harpoon" McSlap',
         race: 'Human',
-        class: 'Ranged',
+        class: 'Ranger',
+        subclass: 'Archery',
         level: 10,
         alignment: 'Sailor Folk',
         hitpoints: 30,
@@ -58,7 +60,8 @@ const characterData = [
     {
         name: 'Carl',
         race: 'High-Elf',
-        class: 'Thief',
+        class: 'Rouge',
+        subclass: 'Thief',
         level: 8,
         alignment: 'Theives-Guild',
         hitpoints: 25,
