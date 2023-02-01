@@ -1,4 +1,4 @@
-let e1, e2, e3, e4;
+let e1, e2, e3, e4, e5, e6, e7, e8;
 
 function setup() {
   createCanvas(1000, 1000);
