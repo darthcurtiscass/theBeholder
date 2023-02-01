@@ -1,11 +1,12 @@
 {{#if loggedIn}}
 <section class="flex-row justify-center"></section>
-{{#each campaign.name as |campaign|}}
-{{> campaign-details}}
+{{#each user.campaigns as |campaign|}}
+{{!-- {{> campaign-details}} --}}
 {{/each}}
 
-{{#each character.name as |character|}}
-{{> character-details}}
+{{#each user.characters as |character|}}
+{{!-- {{> character-details}} --}}
+<p>{{character.name}}</p>
 {{/each}}
 </section>
 {{else}}
