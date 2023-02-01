@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const axios = require('axios');
 const Post = require('../models/Post');
 
 router.get('/homepage', async (req, res) => {
@@ -7,6 +6,7 @@ router.get('/homepage', async (req, res) => {
         const postData = await Post.findAll()
         const post = postData.map((newPosts) => newPosts.get({ plain: true }))
         res.status(200).json(post)
+
     } catch (err) {
         console.log(err)
         res.status(500).json({message:'an error occurred, please try again.'})
