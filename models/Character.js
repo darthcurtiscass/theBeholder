@@ -106,14 +106,7 @@ Character.init (
             type: DataTypes.STRING,
             allowNull: true,
         },
-        features: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        traits: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
+       
         user_id: {
             type: DataTypes.INTEGER,
             references: {
