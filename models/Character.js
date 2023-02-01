@@ -26,6 +26,10 @@ Character.init (
             type: DataTypes.STRING,
             allowNull: false,
         },
+        subclass: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         level: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -39,14 +43,6 @@ Character.init (
             allowNull: false,
         },
         experience_points: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        initiative: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        attack_modifier:{
             type: DataTypes.INTEGER,
             allowNull: false,
         },
@@ -106,7 +102,6 @@ Character.init (
             type: DataTypes.STRING,
             allowNull: true,
         },
-       
         user_id: {
             type: DataTypes.INTEGER,
             references: {
