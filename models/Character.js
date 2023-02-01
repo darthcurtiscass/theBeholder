@@ -46,14 +46,6 @@ Character.init (
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        initiative: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        attack_modifier:{
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
         speed: {
             type: DataTypes.INTEGER,
             allowNull: false,
