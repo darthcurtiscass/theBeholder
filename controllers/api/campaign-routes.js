@@ -11,6 +11,19 @@ const Campaign = require('../../models/Campaign');
         }
     });
 
+    router.get('/user/:user_id', async (req, res) => {
+        try{
+            const userCampaigns = await Campaign.findAll({
+                where: {
+                    user_id: req.params.user_id
+                }
+            })
+            res.status(200).json(userCampaigns)
+        } catch (err) {
+            res.status(500).json({message:'an error occurred, please try again.'})
+        }
+    });
+
     router.get('/:id', async (req, res) => {
         try {
             const oneCampaign = await Campaign.findOne({
