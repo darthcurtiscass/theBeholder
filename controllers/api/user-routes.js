@@ -63,45 +63,45 @@ router.put('/:id', auth, async (req, res) => {
     }
 });
 //user login route to establish a loggedIn session and save their user_id, user_name, and user_email.
-router.post('/login', async (req, res) => {
-    try {
-      const userData = await User.findOne({
-        where: {
-          email: req.body.email,
-        },
-      });
+// router.post('/login', async (req, res) => {
+//     try {
+//       const userData = await User.findOne({
+//         where: {
+//           email: req.body.email,
+//         },
+//       });
   
-      if (!userData) {
-        res
-          .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
-        return;
-      }
+//       if (!userData) {
+//         res
+//           .status(400)
+//           .json({ message: 'Incorrect email or password. Please try again!' });
+//         return;
+//       }
   
-      const validPassword = await userData.checkPassword(req.body.password);
+//       const validPassword = await userData.checkPassword(req.body.password);
   
-      if (!validPassword) {
-        res
-          .status(400)
-          .json({ message: 'Incorrect email or password. Please try again!' });
-        return;
-      }
+//       if (!validPassword) {
+//         res
+//           .status(400)
+//           .json({ message: 'Incorrect email or password. Please try again!' });
+//         return;
+//       }
   
-      req.session.save(() => {
-        req.session.loggedIn = true;
-        req.session.user_id = userData.id;
-        req.session.user_name = userData.name;
-        req.session.user_email = userData.email;
+//       req.session.save(() => {
+//         req.session.loggedIn = true;
+//         req.session.user_id = userData.id;
+//         req.session.user_name = userData.name;
+//         req.session.user_email = userData.email;
 
-        res
-          .status(200)
-          .json({ user: userData, message: 'You are now logged in!' });
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+//         res
+//           .status(200)
+//           .json({ user: userData, message: 'You are now logged in!' });
+//       });
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   });
 //route to delete a user based on their id.
 router.delete('/:id', async (req, res) => {
     const deleteUser = await User.destroy({ where: {id: req.params.id}})
