@@ -26,8 +26,10 @@ router.get('/user/:id', async (req, res) => {
             ],
         });
         const myProfile = profileData.get({ plain: true });
-        res.status(200).json(myProfile)
-        res.render('profile', { myProfile });
+        console.log('=====================================')
+        console.log(req.session);
+        console.log('=====================================')
+        res.render('profile', { myProfile, loggedIn: req.session.loggedIn });
 
     } catch (err) {
         console.log(err)
@@ -35,7 +37,7 @@ router.get('/user/:id', async (req, res) => {
     }
 });
 //get all characters belonging to a specific user
-router.get('characters/:user_id', async (req, res) => {
+router.get('/characters/:user_id', async (req, res) => {
     try {
         const userCharacters = await Character.findAll({
             where: {

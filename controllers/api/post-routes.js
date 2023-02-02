@@ -42,6 +42,7 @@ router.post('/', auth, async (req, res) => {
     try {
         const newPost = await Post.create({
             content: req.body.content,
+            user_id: req.session.user_id,
         });
         req.session.save(() => {
             req.session.loggedIn = true;

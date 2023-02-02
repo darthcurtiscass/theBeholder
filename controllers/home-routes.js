@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Post = require('../models/Post');
+const User = require('../models/User')
 
 router.get('/homepage', async (req, res) => {
     try {
@@ -13,9 +14,8 @@ router.get('/homepage', async (req, res) => {
                 }
             ]
         })
-        const post = postData.get({ plain: true })
-        res.status(200).json(post)
-        res.render('homepage', { post });
+        const posts = postData.map((post) => post.get({ plain: true }));
+        res.render('homepage', { posts });
 
     } catch (err) {
         console.log(err)
