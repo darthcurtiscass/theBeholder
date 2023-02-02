@@ -15,7 +15,7 @@ router.get('/homepage', async (req, res) => {
             ]
         })
         const posts = postData.map((post) => post.get({ plain: true }));
-        res.render('homepage', { posts });
+        res.render('homepage', { postData });
 
     } catch (err) {
         console.log(err)

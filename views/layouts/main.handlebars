@@ -13,13 +13,13 @@
         Dungeons & Dragons Player Utility
     </header>
     <nav>
-        <a href="../homepage.handlebars">Home</a>
+        <a href="/homepage">Home</a>
         {{#if loggedIn}}
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a href="../../public/js/login.js">Signup</a>
+        <a href="/api/login">Signup</a>
         {{/if}}
-        <a href="../profile.handlebars">Profile</a>
+        <a href="/profile">Profile</a>
     </nav>
 
     <main>
