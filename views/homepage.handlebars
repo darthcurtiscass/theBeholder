@@ -1,3 +1,9 @@
-{{#each postData as |user-post|}}
+{{!-- {{#each postData as |user-post|}}
 {{> post-details}}
-{{/each}}
+{{/each}} --}}
+{{!-- <P>{{content}}</P> --}}
+<div>
+    {{#each posts as |post|}}
+        <h4>{{post.content}}</h4>
+    {{/each}}
+  </div>
