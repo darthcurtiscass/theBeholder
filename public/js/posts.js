@@ -33,21 +33,10 @@
           'Content-Type': 'application/json',
         },
       });
-      const posts = await response.json();
-
-      posts.forEach(post => {
-        const postEl = document.createElement("div");
-        postEl.innerHTML = `
-          <h2>${post.content}</h2>
-          <p>${user.name}</p>
-        `;
-        postsContainer.appendChild(postEl);
-      })
-  
       if (response.ok) {
         document.location.replace('/homepage');
       } else {
-        alert('Failed to create campaign');
+        alert('Failed to create post');
       }
     }
   };

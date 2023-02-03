@@ -3,12 +3,12 @@ const newCampaignHandler = async (event) => { //edit this page
 
   const name = document.querySelector('#campaign-name').value.trim();
   // const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#campaign-desc').value.trim();
+  const quest = document.querySelector('#campaign-desc').value.trim();
 
-  if (name && description) {
+  if (name && quest) {
     const response = await fetch(`/api/campaigns`, {
       method: 'POST',
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({ name, quest }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -41,6 +41,7 @@ const newCharacterHandler = async (event) => { //edit this page
     if (response.ok) {
       document.location.replace('/profile/user');
     } else {
+      console.log(response)
       alert('Failed to create campaign');
     }
   }
