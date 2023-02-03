@@ -24,14 +24,20 @@
     text-decoration: none;
   }
   
-  a:visited {
-    color: inherit;
-  }
+ 
   
   header {
     padding: 40px;
     text-align: center;
     background: var(--primary);
+    color: var(--light);
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: var(--dark);
     color: var(--light);
   }
   
@@ -77,7 +83,8 @@
   }
   
   .btn-style {
-    background: none;
+    color: white;
+    background: black;
     border: none;
     padding: 0;
     cursor: pointer;
