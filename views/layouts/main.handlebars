@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> The Beholder</title>
     <link rel="stylesheet" href="../../public/css/style.css">
 
@@ -15,7 +16,7 @@
     <nav>
         <a href="/homepage">Home</a>
         {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">logout</button>
+        <button id="logout" class="btn-style">logout</button>
         {{else}}
         <a href="/api/login">Signup</a>
         {{/if}}
