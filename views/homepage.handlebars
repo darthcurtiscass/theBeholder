@@ -1,18 +1,14 @@
-{{!-- <div>
-    {{#each posts as |post|}}
-        <h4>{{post.content}}</h4>
-    {{/each}}
-</div>  --}}
+
 <div class="row mt-4">
     <div class="col-md-6">
         
         <form class="new-post-form">
             <div class="form-group">
                 <label for="post-field">Posts:</label>
-                <textarea class="form-input" id="post-field" name="post-field"></textarea>
+                <textarea class="form-input" type="text" id="post-field" name="post-field"></textarea>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Post</button>
+                <button type="submit" class="new-post">Post</button>
             </div>    
         </form>  
     </div>
@@ -24,23 +20,4 @@
     {{/each}}
 </div> 
 
-
-
-
-{{!-- 
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create New Campaigns:</h3>
-
-    <form class="new-campaign-form">
-      <div class="form-group">
-        <label for="campaign-desc">description:</label>
-        <textarea class="form-input" id="campaign-desc" name="campaign-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-</div> --}}
+<script src="/js/posts.js"></script>
