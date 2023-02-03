@@ -1,14 +1,90 @@
-{{#if loggedIn}}
-<section class="flex-row justify-center"></section>
-{{#each user.campaigns as |campaign|}}
-{{> campaign-details}}
-{{/each}}
+<a href="/js/login.js">You must login first to view this page</a>
+{{/if}} --}}
 
-{{#each user.characters as |character|}}
-{{> character-details}}
-<p>{{character.name}}</p>
-{{/each}}
-</section>
-{{else}}
-<a href="../public/js/login.js">You must login first to view this page</a>
-{{/if}}
+
+
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create New Campaigns:</h3>
+
+    <form class="form new-campaign-form">
+      <div class="form-group">
+        <label for="campaign-name">Campaign Name:</label>
+        <input class="form-input" type="text" id="campaign-name" name="campaign-name" />
+      </div>
+      {{!-- <div class="form-group">
+        <label for="campaign-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="campaign-funding" name="campaign-funding" />
+      </div> --}}
+      <div class="form-group">
+        <label for="campaign-desc">description:</label>
+        <textarea class="form-input" id="campaign-desc" name="campaign-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create New Character:</h3>
+
+    <form class="form new-character-form">
+      <div class="form-group">
+        <label for="character-name">character Name:</label>
+        <input class="form-input" type="text" id="character-name" name="character-name" />
+      </div>
+      {{!-- <div class="form-group">
+        <label for="character-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="character-funding" name="character-funding" />
+      </div> --}}
+      <div class="form-group">
+        <label for="character-desc">description:</label>
+        <textarea class="form-input" id="character-desc" name="character-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-6 campaign-list">
+    <h3>Current campaigns:</h3>
+
+    {{#each campaigns as |campaign|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/campaign/{{campaign.id}}">{{campaign.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{campaign.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+ <div class="col-md-6 character-list">
+    <h3>Current characters:</h3>
+
+    {{#each characters as |character|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/character/{{character.id}}">{{character.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{character.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<script src="./js/profile.js"></script>
