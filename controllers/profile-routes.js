@@ -29,7 +29,7 @@ router.get('/user/:id', async (req, res) => {
         console.log('=====================================')
         console.log(req.session);
         console.log('=====================================')
-        res.render('profile', { myProfile, loggedIn: req.session.loggedIn });
+        res.render('profile', { myProfile, loggedIn: req.session.loggedIn, curr_user_id: req.session.user_id});
 
     } catch (err) {
         console.log(err)
