@@ -21,20 +21,22 @@
   const newPostHandler = async (event) => { //edit this page
     event.preventDefault();
   
-    const postContent = document.querySelector("#postsContainer");
+    const content = document.querySelector("#post-field");
     // const needed_funding = document.querySelector('#project-funding').value.trim();
     // const description = document.querySelector('#campaign-desc').value.trim();
   
-    if (postContent) {
+    if (content) {
       const response = await fetch(`/api/posts`, {
         method: 'POST',
-        body: JSON.stringify({ postContent }),
+        body: JSON.stringify({ content }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
       if (response.ok) {
+        console.log(content)
         document.location.replace('/homepage');
+       
       } else {
         alert('Failed to create post');
       }
