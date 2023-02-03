@@ -1,9 +1,23 @@
-{{!-- {{#each postData as |user-post|}}
-{{> post-details}}
-{{/each}} --}}
-{{!-- <P>{{content}}</P> --}}
 <div>
     {{#each posts as |post|}}
         <h4>{{post.content}}</h4>
     {{/each}}
-  </div>
+</div> 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Posts</title>
+  </head>
+  <body>
+    <div>
+        {{#each posts as |post|}}
+            <h4>{{post.content}}</h4>
+        {{/each}}
+    </div> 
+    <div id="postsContainer">
+    <textarea class="form-input" id="character-desc" name="character-desc"></textarea>
+    <button type="submit" class="btn btn-primary">Post</button>
+    </div>
+  </body>
+</html>

@@ -3,9 +3,9 @@ const router = require('express').Router();
 const auth = require('../utils/auth');
 const { Character, Campaign, User } = require('../models');
 
-router.get('/user/:id', async (req, res) => {
+router.get('/user', async (req, res) => {
     try {
-        const profileData = await User.findByPk(req.params.id, {
+        const profileData = await User.findByPk(req.session.user_id, {
             include: [
                 {
                     model: Campaign,
