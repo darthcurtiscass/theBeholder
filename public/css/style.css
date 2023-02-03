@@ -49,7 +49,7 @@
   
   aside {
     flex: 0;
-    background-color: var(--tertiary);
+    background-color: var(--primary);
     padding: 80px;
     text-align: left;
     color: var(--light);
