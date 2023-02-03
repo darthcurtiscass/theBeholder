@@ -3,9 +3,9 @@ const router = require('express').Router();
 const auth = require('../utils/auth');
 const { Character, Campaign, User } = require('../models');
 
-router.get('/user', async (req, res) => {
+router.get('/user/:id', async (req, res) => {
     try {
-        const profileData = await User.findByPk(req.session.user_id, {
+        const profileData = await User.findByPk(req.params.id, {
             include: [
                 {
                     model: Campaign,
@@ -29,7 +29,6 @@ router.get('/user', async (req, res) => {
         console.log('=====================================')
         console.log(req.session);
         console.log('=====================================')
-        // res.status(200).json(myProfile)
         res.render('profile', { ...myProfile, loggedIn: req.session.loggedIn });
 
     } catch (err) {
@@ -77,12 +76,12 @@ router.get('/user/:user_id', auth, async (req, res) => {
     }
 });
 
-// router.get('/login', (req, res) => {
-//     if(req.session.loggedIn){
-//         res.redirect('/');
-//         return 
-//     }
-//     res.render('/login');
-// })
+router.get('/login', (req, res) => {
+    if(req.session.loggedIn){
+        res.redirect('/');
+        return 
+    }
+    res.render('/login');
+})
 
 module.exports = router;
