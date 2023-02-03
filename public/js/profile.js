@@ -66,6 +66,10 @@ document
   .querySelector('.new-campaign-form')
   .addEventListener('submit', newCampaignHandler);
 
+  document
+  .querySelector('.new-character-form')
+  .addEventListener('submit', newCharacterHandler);
+
 // document
 //   .querySelector('.project-list')
 //   .addEventListener('click', delButtonHandler);
