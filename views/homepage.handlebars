@@ -1,23 +1,21 @@
-<div>
+{{!-- <div>
     {{#each posts as |post|}}
         <h4>{{post.content}}</h4>
     {{/each}}
-</div> 
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Blog Posts</title>
-  </head>
-  <body>
-    <div>
-        {{#each posts as |post|}}
-            <h4>{{post.content}}</h4>
-        {{/each}}
-    </div> 
-    <div id="postsContainer">
-    <textarea class="form-input" id="character-desc" name="character-desc"></textarea>
-    <button type="submit" class="btn btn-primary">Post</button>
+</div>  --}}
+<div class="row mt-4">
+    <div class="col-md-6">
+        <form>
+            <div class="row mb-2">
+                <div class="col-md-6 campaign-list">
+                    {{#each posts as |post|}}
+                        <h4>{{post.content}}</h4>
+                    {{/each}}
+                </div> 
+            </div>
+            <div id="postsContainer">
+            <textarea class="form-input" id="post-field" name="post-desc"></textarea>
+            <button type="submit" class="btn btn-primary">Post</button>
+        </form>  
     </div>
-  </body>
-</html>
+</div>    
