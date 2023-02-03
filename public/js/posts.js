@@ -1,27 +1,7 @@
-// const postsContainer = document.getElementById("postsContainer");
-
-// // Fetch the blog posts from the backend
-// fetch("")
-//   .then(response => response.json())
-//   .then(posts => {
-//     // Loop through the posts and create HTML elements for each one
-//     posts.forEach(post => {
-//       const postElement = document.createElement("div");
-//       postElement.innerHTML = `
-//         <h2>${post.title}</h2>
-//         <p>${post.body}</p>
-//       `;
-//       postsContainer.appendChild(postElement);
-//     });
-//   })
-//   .catch(error => {
-//     console.error("An error occurred:", error);
-//   });
-
   const newPostHandler = async (event) => { //edit this page
     event.preventDefault();
   
-    const content = document.querySelector("#post-field");
+    const content = document.querySelector('#post-field').value.trim();
     // const needed_funding = document.querySelector('#project-funding').value.trim();
     // const description = document.querySelector('#campaign-desc').value.trim();
   
@@ -44,5 +24,5 @@
   };
 
   document
-  .querySelector('.new-post')
+  .querySelector('.new-post-form')
   .addEventListener('submit', newPostHandler);
