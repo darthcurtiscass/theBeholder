@@ -26,13 +26,26 @@ const newCharacterHandler = async (event) => { //edit this page
   event.preventDefault();
 
   const name = document.querySelector('#character-name').value.trim();
-  // const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#character-data').value.trim();
+  const race = document.querySelector('#character-race').value.trim();
+  const character_class = document.querySelector('#character-class').value.trim();
+  const subclass = document.querySelector('#character-subclass').value.trim();
+  const level = document.querySelector('#character-level').value.trim();
+  const alignment = document.querySelector('#character-aligment').value.trim();
+  const hitpoints = document.querySelector('#character-hp').value.trim();
+  const experience_points = document.querySelector('#character-exp').value.trim();
+  const speed = document.querySelector('#character-speed').value.trim();
+  const strength = document.querySelector('#character-strength')
+  const dexterity = document.querySelector('#character-dexterity').value.trim();
+  const constitution = document.querySelector('#character-constitution').value.trim();
+  const intelligence = document.querySelector('#character-intel').value.trim();
+  const wisdom = document.querySelector('#character-wisdom').value.trim();
+  const charisma = document.querySelector('#character-charisma').value.trim();
+  
 
-  if (name && description) {
+  if (name && race && character_class && subclass && level && alignment && hitpoints && experience_points && speed && strength && dexterity && constitution && intelligence && wisdom && charisma) {
     const response = await fetch(`/api/characters`, {
       method: 'POST',
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({ name, race, character_class, subclass, level, alignment, hitpoints, experience_points, speed, strength, dexterity, constitution, intelligence, wisdom, charisma }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -42,7 +55,7 @@ const newCharacterHandler = async (event) => { //edit this page
       document.location.replace('/profile/user');
     } else {
       console.log(response)
-      alert('Failed to create campaign');
+      alert('Failed to create character');
     }
   }
 };
