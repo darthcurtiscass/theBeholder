@@ -17,10 +17,10 @@
         <a href="/homepage">Home</a>
         {{#if loggedIn}}
         <button id="logout" class="btn-style">logout</button>
-        <a href="/profile/user/{{}}">Profile</a>
         {{else}}
         <a href="/api/login">Signup</a>
         {{/if}}
+        <a href="/profile/user/{{}}">Profile</a>
     </nav>
 
     <main>
