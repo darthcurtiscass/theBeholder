@@ -20,7 +20,7 @@ router.get('/user', async (req, res) => {
                     attributes: [
                         'name',
                         'race',
-                        'class',
+                        'character_class',
                     ],
                 },
             ],

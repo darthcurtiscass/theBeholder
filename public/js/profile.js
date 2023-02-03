@@ -30,11 +30,11 @@ const newCharacterHandler = async (event) => { //edit this page
   const character_class = document.querySelector('#character-class').value.trim();
   const subclass = document.querySelector('#character-subclass').value.trim();
   const level = document.querySelector('#character-level').value.trim();
-  const alignment = document.querySelector('#character-aligment').value.trim();
+  const alignment = document.querySelector('#character-alignment').value.trim();
   const hitpoints = document.querySelector('#character-hp').value.trim();
   const experience_points = document.querySelector('#character-exp').value.trim();
   const speed = document.querySelector('#character-speed').value.trim();
-  const strength = document.querySelector('#character-strength')
+  const strength = document.querySelector('#character-strength').value.trim();
   const dexterity = document.querySelector('#character-dexterity').value.trim();
   const constitution = document.querySelector('#character-constitution').value.trim();
   const intelligence = document.querySelector('#character-intel').value.trim();
