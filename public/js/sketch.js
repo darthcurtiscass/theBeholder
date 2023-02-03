@@ -54,7 +54,3 @@ function Eye(tx, ty, ts) {
     pop();
   };
 }
-
- Eye();
- setup();
- draw();
