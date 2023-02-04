@@ -26,10 +26,15 @@ a {
 
 
 header {
-  padding: 40px;
+  padding: 30px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
+}
+
+header h1 {
+  display: inline;
+  color: var(--error);
 }
 
 footer {
@@ -50,6 +55,7 @@ main {
 .blog {
   display: flex;
   margin-left: auto;
+  margin-right: auto;
   text-align: justify;
 }
 
@@ -63,7 +69,6 @@ aside {
 
 nav {
   display: flex;
-  flex-direction: row-reverse;
   background-color: var(--tertiary);
 }
 
@@ -77,6 +82,12 @@ nav a {
 nav a:hover {
   color: var(--secondary);
   background-color: var(--dark);
+}
+
+.profile-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-top: 2%;
 }
 
 .post-content {
@@ -119,6 +130,31 @@ img {
   font-weight: bold;
 }
 
+.campaign-card {
+  margin: 10px 25px 20px 0;
+  flex: 1 0 50%;
+  max-width: 500%;
+  padding: 10px;
+  border: 3px solid var(--tertiary);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: #1a3d3f;
+  color: var(--light);
+}
+
+.character-card {
+  margin: 10px 25px 20px 0;
+  flex: 1 0 50%;
+  max-width: 500%;
+  padding: 10px;
+  border: 3px solid var(--tertiary);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: #1a3d3f;
+  color: var(--light);
+}
 
 .card {
   margin: 20px;
