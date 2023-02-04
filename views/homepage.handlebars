@@ -5,20 +5,20 @@
         <form class="new-post-form">
             <div class="form-group">
                 <label for="post-field">Posts:</label>
+            {{#if loggedIn}}
                 <textarea class="form-input" type="text" id="post-field" name="post-field"></textarea>
+                
             </div>
             <div class="form-group">
                 <button type="submit" class="new-post">Post</button>
-            </div>    
+            </div>
+            {{/if}}    
         </form>  
     </div>
 </div>    
-
-<div class="col-md-6 campaign-list">
-    {{#each posts as |post|}}
-        <h4>{{post.content}}</h4>
-        <h5>{{post.name}}</h5>
-    {{/each}}
+{{#each posts as |post|}}
+<div class="col-md-6 post-list">
+    <p>{{post.content}} {{post.user.name}} {{post.date}}</p>
 </div> 
-
+{{/each}}
 <script src="/js/posts.js"></script>
