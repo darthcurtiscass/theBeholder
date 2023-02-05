@@ -156,6 +156,55 @@ img {
   color: var(--light);
 }
 
+.post-card {
+  margin: 10px 25px 20px 0;
+  flex:auto;
+  max-width: 300%;
+  padding: 10px;
+  border: 3px solid var(--tertiary);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: #1a3d3f;
+  color: var(--light);
+}
+
+.post-list {
+  flex:auto;
+  margin: 5px 5px 5px 5px;
+  padding: 5px;
+  border: 3px solid var(--quatrinary);
+  border-radius: var(--border-radius);
+  border-style: groove;
+  border-width: thick;
+  background-color: var(--tertiary);
+}
+
+.post-list h3 {
+  display: inline-block;
+}
+
+.post-list h4 {
+  display: inline-block;
+  text-align: end;
+}
+
+.post-list p {
+  flex:auto;
+  margin: 5px 5px 5px 5px;
+  padding: 5px;
+  border: 2px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: groove;
+  border-width: thick;
+  background-color: #1a3d3f;
+}
+
+.post-form {
+  flex:auto;
+}
+
+
 .card {
   margin: 20px;
   flex: 0 1 300px;
