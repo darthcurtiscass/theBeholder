@@ -62,7 +62,7 @@ main {
 aside {
   flex: 0;
   background-color: var(--primary);
-  padding: 80px;
+  padding: 10px;
   text-align: center;
   color: var(--secondary);
 }
