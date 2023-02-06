@@ -70,7 +70,7 @@ router.get('/characters/:user_id', async (req, res) => {
         res.status(500).json({message:'an error occurred, please try again.'})
     }
 });
-//get all campaigns belongin to a specific user
+// get all campaigns belongin to a specific user
 router.get('/campaign/:user_id', auth, async (req, res) => {
     try {
         const userCampaigns = await Campaign.findAll({
@@ -108,7 +108,7 @@ router.get('/character/:id', async (req, res) => {
     }
 });
 
-router.get('/campaign/:id', async (req, res) => {
+router.get('/campaigns/:id', async (req, res) => {
     try {
         const oneCampaign = await Campaign.findByPk(req.params.id)
 
