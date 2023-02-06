@@ -7,9 +7,9 @@ router.use('/api', apiRoutes);
 router.use('/profile', profileRoutes);
 router.use('/', homeRoutes);
 
-// router.get('*', async (req, res) => {
-//   res.redirect('/homepage');
-// })
+router.get('*', async (req, res) => {
+  res.redirect('/homepage');
+})
 
 
 router.use((req, res) => {
