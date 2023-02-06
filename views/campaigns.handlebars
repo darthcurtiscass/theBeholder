@@ -1,0 +1,12 @@
+<section class="container">
+  <h3 class="campaign-name">{{name}}</h3>
+
+  {{#if loggedIn}}
+  <section class="flex-row justify-center">
+    <div>{{quest}}</div>
+    <div>{{party_size}}</div>
+  </section>
+</section>
+{{else}}
+<a href="/api/login">You must login first to view this page</a>
+{{/if}}

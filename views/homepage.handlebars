@@ -1,0 +1,31 @@
+
+<div class="post-card">
+    
+{{#each posts as |post|}}
+<div class="col-md-6 post-list">
+    <h3>- {{post.user.name}}</h3> <h4>{{post.date}}</h4>
+    
+    <div class = "">
+        <p>{{post.content}}</p>
+    </div>
+</div> 
+{{/each}}
+
+<div class="post-form">
+        
+        <form class="new-post-form">
+            <div class="form-group">
+                <label for="post-field">Posts:</label>
+            {{#if loggedIn}}
+                <textarea class="form-input" type="text" id="post-field" name="post-field"></textarea>
+                
+            </div>
+            <div class="form-group">
+                <button type="submit" class="new-post" id ="post-submit" style="height:50px; width:50px">Post</button>
+            </div>
+            {{/if}}    
+        </form>  
+</div>
+
+</div>
+<script src="/js/posts.js"></script>

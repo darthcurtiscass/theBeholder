@@ -1,0 +1,178 @@
+<div class="profile-wrap">
+  <div class="campaign-card">
+    <h3>Create New Campaigns:</h3>
+
+    <form class="new-campaign-form">
+      <div class="form-group">
+        <label for="campaign-name">Campaign Name:</label>
+        <input class="form-input" type="text" id="campaign-name" name="campaign-name" />
+      </div>
+      {{!-- <div class="form-group">
+        <label for="campaign-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="campaign-funding" name="campaign-funding" />
+      </div> --}}
+      <div class="form-group">
+        <label for="campaign-desc">Description:</label>
+        <textarea class="form-input" id="campaign-desc" name="campaign-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="character-card">
+    <h3>Create New Character:</h3>
+
+    <form class="new-character-form">
+      <div class="form-group">
+        <label for="character-name">Character Name:</label>
+        <input class="form-input" type="text" id="character-name" name="character-name" />
+      </div>
+      {{!-- <div class="form-group">
+        <label for="character-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="character-funding" name="character-funding" />
+      </div> --}}
+      <div class="form-group">
+        <label for="character-race">Race:</label>
+        <textarea class="form-input" id="character-race" name="character-race"></textarea>
+      </div>
+     
+      <div class="form-group">
+        <label for="character-class">Class:</label>
+        <textarea class="form-input" id="character-class" name="character-class"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-subclass">Sub Class:</label>
+        <textarea class="form-input" id="character-subclass" name="character-subclass"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-level">Level:</label>
+        <textarea class="form-input" id="character-level" name="character-level"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-alignment">Alignment:</label>
+        <textarea class="form-input" id="character-alignment" name="character-alignment"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-hp">Hitpoints:</label>
+        <textarea class="form-input" id="character-hp" name="character-hp"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-exp">Experience Points:</label>
+        <textarea class="form-input" id="character-exp" name="character-exp"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-speed">Speed:</label>
+        <textarea class="form-input" id="character-speed" name="character-speed"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-strength">Strength:</label>
+        <textarea class="form-input" id="character-strength" name="character-strength"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-dexterity">Dexterity:</label>
+        <textarea class="form-input" id="character-dexterity" name="character-dexterity"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-constitution">Constitution:</label>
+        <textarea class="form-input" id="character-constitution" name="character-constitution"></textarea>
+      </div>
+
+       <div class="form-group">
+        <label for="character-intel">Intelligence:</label>
+        <textarea class="form-input" id="character-intel" name="character-intel"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-wisdom">Wisdom:</label>
+        <textarea class="form-input" id="character-wisdom" name="character-wisdom"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-charisma">Charisma:</label>
+        <textarea class="form-input" id="character-charisma" name="character-charisma"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-spells">Spells:</label>
+        <textarea class="form-input" id="character-spells" name="character-spells"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="character-cantrips">Cantrips:</label>
+        <textarea class="form-input" id="character-cantrips" name="character-cantrips"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-proficiencies">Proficiencies:</label>
+        <textarea class="form-input" id="character-proficiencies" name="character-proficiencies"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-personality">Personality:</label>
+        <textarea class="form-input" id="character-personality" name="character-personality"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-ideals">Ideals:</label>
+        <textarea class="form-input" id="character-ideals" name="character-ideals"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-bonds">Bonds:</label>
+        <textarea class="form-input" id="character-bonds" name="character-bonds"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="character-flaws">Flaws:</label>
+        <textarea class="form-input" id="character-flaws" name="character-flaws"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-6 campaign-list">
+    <h3>Current campaigns:</h3>
+
+    {{#each campaigns as |campaign|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/profile/campaign/{{campaign.id}}">{{campaign.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{campaign.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+ <div class="col-md-6 character-list">
+    <h3>Current characters:</h3>
+
+    {{#each characters as |character|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/profile/character/{{character.id}}">{{character.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{character.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<script src="/js/profile.js"></script>
