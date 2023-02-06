@@ -40,12 +40,23 @@ const newCharacterHandler = async (event) => { //edit this page
   const intelligence = document.querySelector('#character-intel').value.trim();
   const wisdom = document.querySelector('#character-wisdom').value.trim();
   const charisma = document.querySelector('#character-charisma').value.trim();
-  
+  const spells = document.querySelector('#character-spells').value.trim();
+  const cantrips = document.querySelector('#character-cantrips').value.trim();
+  const proficiencies = document.querySelector('#character-proficiencies').value.trim();
+  const personality = document.querySelector('#character-personality').value.trim();
+  const ideals = document.querySelector('#character-ideals').value.trim();
+  const bonds = document.querySelector('#character-bonds').value.trim();
+  const flaws = document.querySelector('#character-flaws').value.trim();
 
-  if (name && race && character_class && subclass && level && alignment && hitpoints && experience_points && speed && strength && dexterity && constitution && intelligence && wisdom && charisma) {
+
+
+
+  if (name && race && character_class && subclass && level && alignment && hitpoints && experience_points && speed && strength && dexterity && 
+    constitution && intelligence && wisdom && charisma || spells || cantrips || proficiencies || personality || ideals || bonds || flaws) {
     const response = await fetch(`/api/characters`, {
       method: 'POST',
-      body: JSON.stringify({ name, race, character_class, subclass, level, alignment, hitpoints, experience_points, speed, strength, dexterity, constitution, intelligence, wisdom, charisma }),
+      body: JSON.stringify({ name, race, character_class, subclass, level, alignment, hitpoints, experience_points, speed, strength, dexterity, 
+        constitution, intelligence, wisdom, charisma, spells, cantrips, proficiencies, personality, ideals, bonds, flaws }),
       headers: {
         'Content-Type': 'application/json',
       },
