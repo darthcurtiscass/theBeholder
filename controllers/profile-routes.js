@@ -10,6 +10,7 @@ router.get('/user', auth, async (req, res) => {
                 {
                     model: Campaign,
                     attributes: [
+                        'id',
                         'name',
                         'quest',
                         'party_size',
@@ -18,9 +19,29 @@ router.get('/user', auth, async (req, res) => {
                 {
                     model: Character,
                     attributes: [
+                        'id',
                         'name',
                         'race',
                         'character_class',
+                        'subclass',
+                        'level',
+                        'alignment',
+                        'hitpoints',
+                        'experience_points',
+                        'speed',
+                        'strength',
+                        'dexterity',
+                        'constitution',
+                        'intelligence',
+                        'wisdom',
+                        'charisma',
+                        'spells',
+                        'cantrips',
+                        'proficiencies',
+                        'personality',
+                        'ideals',
+                        'bonds',
+                        'flaws',
                     ],
                 },
             ],
@@ -73,6 +94,28 @@ router.get('/user/:user_id', auth, async (req, res) => {
         res.status(200).json(user)
     } catch(err) {
         res.status(500).json(err)
+    }
+});
+
+router.get('/character/:id', async (req, res) => {
+    try {
+        const character = await Character.findByPk(req.params.id)
+        
+        const myCharacter = character.get({ plain: true });
+        res.render('characters', {...myCharacter, loggedIn: req.session.loggedIn });
+    } catch (err) {
+        res.status(500).json({message:err})
+    }
+});
+
+router.get('/campaign/:id', async (req, res) => {
+    try {
+        const oneCampaign = await Campaign.findByPk(req.params.id)
+
+        const myCampaign = oneCampaign.get({ plain: true });
+        res.render('campaigns', {...myCampaign, loggedIn: req.session.loggedIn });
+    } catch (err) {
+        res.status(500).json({message:'an error occurred, please try again.'})
     }
 });
 

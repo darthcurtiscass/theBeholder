@@ -29,8 +29,8 @@ router.get('/:id', async (req, res) => {
     try {
         const character = await Character.findByPk(req.params.id)
         
-        console.log(character)
-        res.status(200).json(character)
+        const myCharacter = character.get({ plain: true });
+        // res.render('characters', {myCharacter})
     } catch (err) {
         res.status(500).json({message:err})
     }

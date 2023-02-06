@@ -1,11 +1,29 @@
 <section class="container">
-  <h3 class="character-name">{{character.name}}</h3>
+  <h3 class="character-name">{{name}}</h3>
 
   {{#if loggedIn}}
-  <section class="flex-row justify-center">
-    {{#each character.name as |character|}}
-    {{> character-details}}
-    {{/each}}
+  <section class="flex-column justify-center">
+   <div>{{race}}</div> 
+   <div>{{character_class}}</div>
+   <div>{{subclass}}</div>
+    <div>{{level}}</div>
+    <div>{{alignment}}</div>
+    <div>{{hitpoints}}</div>
+    <div>{{experience_points}}</div>
+    <div>{{speed}}</div>
+    <div>{{strength}}</div>
+    <div>{{dexterity}}</div>
+    <div>{{constitution}}</div>
+    <div>{{intelligence}}</div>
+    <div>{{wisdom}}</div>
+    <div>{{charisma}}</div>
+    <div>{{spells}}</div>
+    <div>{{cantrips}}</div> 
+    <div>{{proficiencies}}</div>
+    <div>{{personality}}</div>
+    <div>{{ideals}}</div>
+    <div>{{bonds}}</div>
+    <div>{{flaws}}</div>
   </section>
 </section>
 {{else}}
