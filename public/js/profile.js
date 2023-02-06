@@ -48,9 +48,6 @@ const newCharacterHandler = async (event) => { //edit this page
   const bonds = document.querySelector('#character-bonds').value.trim();
   const flaws = document.querySelector('#character-flaws').value.trim();
 
-
-
-
   if (name && race && character_class && subclass && level && alignment && hitpoints && experience_points && speed && strength && dexterity && 
     constitution && intelligence && wisdom && charisma || spells || cantrips || proficiencies || personality || ideals || bonds || flaws) {
     const response = await fetch(`/api/characters`, {
@@ -75,7 +72,7 @@ const newCharacterHandler = async (event) => { //edit this page
 //   if (event.target.hasAttribute('data-id')) {
 //     const id = event.target.getAttribute('data-id');
 
-//     const response = await fetch(`/api/projects/${id}`, {
+//     const response = await fetch(`/api//${id}`, {
 //       method: 'DELETE',
 //     });
 

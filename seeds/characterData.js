@@ -4,7 +4,7 @@ const characterData = [
     {
         name: 'James Finger',
         race: 'Goblin',
-        class: 'Wizard',
+        character_class: 'Wizard',
         subclass: 'School of Evocation',
         level: 2,
         alignment: 'Giant Faction',
@@ -28,7 +28,7 @@ const characterData = [
     {
         name: 'jackson "harpoon" McSlap',
         race: 'Human',
-        class: 'Ranger',
+        character_class: 'Ranger',
         subclass: 'Archery',
         level: 10,
         alignment: 'Sailor Folk',
@@ -52,7 +52,7 @@ const characterData = [
     {
         name: 'Carl',
         race: 'High-Elf',
-        class: 'Rouge',
+        character_class: 'Rouge',
         subclass: 'Thief',
         level: 8,
         alignment: 'Theives-Guild',
@@ -76,7 +76,7 @@ const characterData = [
      {
         name: 'Dopin Saxiros',
         race: 'Dragonborn',
-        class: 'Fighter',
+        character_class: 'Fighter',
         level: 5,
         alignment: 'Lawful-Neutral',
         hitpoints: 54,
@@ -99,7 +99,7 @@ const characterData = [
     {
         name: 'Bird Person',
         race: 'Aarakocra',
-        class: 'Druid',
+        character_class: 'Druid',
         level: 5,
         alignment: 'Neutral',
         hitpoints: 33,
@@ -115,40 +115,12 @@ const characterData = [
         cantrips: 'mold earth',
         proficiencies: 'Light Armor, Medium Armor, Shields, Club, Dagger, Dart, Javelin, Mace, Quarterstaff, Scimitar, Sickle, Sling, Spear, Dice Set, Herbalism Kit, Aarakocra, Auran, Common, Druidic, Minotaur',
         personality: '',
-        ideals: '',
-        bonds: '',
-        flaws: '',
+        ideals: 'Squawk!',
+        bonds: 'Tree branches ',
+        flaws: 'Cannot resist a delicious earthworm.',
     },
 ];
 
 const seedCharacter = () => Character.bulkCreate(characterData);
 
 module.exports = seedCharacter;
-
-// {
-//     name: 'notNull/string',
-//     race: 'notNull/string',
-//     class: 'notNull/string',
-//     level: 'notNull/interger',
-//     alignment: 'notNull/string',
-//     hitpoints: 'notNull/interger',
-//     experience_points: 'notNull/interger',
-//     initiative: 'notNull/interger',
-//     attack_modifier: 'notNull/interger',
-//     speed: 'notNull/interger',
-//     strength: 'notNull/interger',
-//     dexterity: 'notNull/interger',
-//     constitution: 'notNull/interger',
-//     intelligence: 'notNull/interger',
-//     wisdom: 'notNull/interger',
-//     charisma: 'notNull/interger',
-//     spells: 'canNull/string',
-//     cantrips: 'canNull/string',
-//     proficiencies: 'canNull/string',
-//     personality: 'canNull/string',
-//     ideals: 'canNull/string',
-//     bonds: 'canNull/string',
-//     flaws: 'canNull/string',
-//     features: 'canNull/string',
-//     traits: 'canNull/string',
-//     },
