@@ -258,3 +258,44 @@ img {
 /* #campaign-list {
   font-size: 50px;
 } */
+
+
+
+@media screen and (max-width: 768px) {
+
+  main,
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .post-content {
+    display: flex;
+    flex-wrap: wrap;
+    order: 1;
+  }
+
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    order: 2;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    order: 3;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav,
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
