@@ -18,7 +18,7 @@ Campaign.init (
             allowNull: false,
         },
         quest: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         party_size: {

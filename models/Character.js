@@ -28,7 +28,7 @@ Character.init (
         },
         subclass: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         level: {
             type: DataTypes.INTEGER,
