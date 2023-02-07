@@ -1,55 +1,39 @@
-# theBeholder
-Project 2 application
+# Dungeons and Dragons Player Utility, home of the Beholder Blog
+
+## Link to deployed application
+https://dcc-notetaker.herokuapp.com/
+
+## Table of Contents: 
+[Description](#description)
+
+[Installation](#installation)
+
+[Usage](#usage)
+
+[Contributions](#contributions)
+
+[License](#license)
+
+[Questions](#questions)
+
+## Description: 
+Full stack application for Dungeons & Dragons players and Dungeon Masters. D&D enthusiasts can communicate with other members of the D&D community by posting on the homepage, as well as keep track of characters they’ve created in their profile. Dungeon Masters can create new campaigns and save them in their profile as well.
+
+## Installation: 
+N/A
+
+## Usage: 
+As a user, you can use this application to chat with other Dungeons and Dragons enthusiasts, and use your profile features to keep track of quests you’re participating in or leading. You can also keep track of characters and their attributes.
+
+## Contributions: 
+Owen Baker, Teamir Teklu, Max Tribble
+
+## License: 
+
+## Questions: 
+Github Username: https://github.com/darthcurtiscass
 
 
-Homepage with blog posts. Users can post if they're logged in. Can view if not logged in.
+Email: dylancurtiscassagnol@icloud.com, owenbaker.m1@gmail.com, teamirteklu@gmail.com, maxtribble@live.com
 
-Profile page consisting of:
-
-
-1. Introduction
-A. Purpose of the project
-B. Overview of the features
-
-2. Development
-A. Setting up the development environment X
-B. Building the backend
-1. Database setup
-2. API endpoints for blog posts
-3. API endpoints for user authentication and character information
-C. Building the frontend
-1. Blog page
-2. Profile page
-
-3. Testing
-A. Unit testing
-B. Integration testing
-C. User acceptance testing
-
-4. Deployment
-A. Choosing a hosting provider
-B. Setting up a production environment
-C. Deploying the application
-
-1.A: To develop a full stack application for dungeons and dragon enthusiasts. They can use the app to build a profile and create characters using Sequelize models and store those characters within their profile page. Users can also communicate with other users through the blog page, which contains text and image posts from logged-in users only.
-
-1.B: 
-Profile page
-- Profile picture
-- p5 background image
-- character list, with names. 
-    - character page appears when clicked.
-        - Contains specific details about character race, name, class, etc.
-        - quests that the character is currently participating in.
-- current campaign information.
-
-Nav Bar
-- Home (blog)
-- Login
-- Profile Image (links to profile page)
-
-Blog page
-- text area to blurb and reblurb to other blurbs.
-
-2.A: install packages
-B:
+![](dnd_sc.png)
