@@ -2,21 +2,25 @@ const { User } = require('../models');
 
 const userData = [
   {
-    name: 'tommy',
-    email: 'tommysemail@gmail.com',
-    password: 'tommyspassword'
+    name: 'dylan',
+    email: 'dylan@du.edu',
+    password: 'pass12345'
   },
   {
-    name: 'michelle',
-    email: 'girlboss1934@yahoo.com',
-    password: 'jfahjHKGkasjKHjk1325'
+    name: 'owen',
+    email: 'owen@du.edu',
+    password: 'pass12345'
   },
   {
-    name: 'rowan',
-    email: 'nawor@aol.com',
-    password: 'password123'
+    name: 'teamir',
+    email: 'teamir@du.edu',
+    password: 'pass12345'
+  },
+  {
+    name: 'max',
+    email: 'max@du.edu',
+    password: 'pass12345'
   }
-    
   ];
   
   const seedUser = () => User.bulkCreate(userData);
